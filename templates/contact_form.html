@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-success">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+<body class="container mt-4">
+
+    <h2>Contact Form</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="first_name" placeholder="First Name" class="form-control mb-2"
+               value="{{ contact.first_name|default:'' }}" required>
+
+        <input type="text" name="last_name" placeholder="Last Name" class="form-control mb-2"
+               value="{{ contact.last_name|default:'' }}" required>
+
+        <textarea name="address" placeholder="Address" class="form-control mb-2">{{ contact.address|default:'' }}</textarea>
+
+        <input type="email" name="email" placeholder="Email" class="form-control mb-2"
+               value="{{ contact.email|default:'' }}" required>
+
+        <input type="text" name="phone_number" placeholder="Phone" class="form-control mb-2"
+               value="{{ contact.phone_number|default:'' }}" required>
+
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="/" class="btn btn-secondary">Back</a>
+    </form>
+
+</body>
+</html>
