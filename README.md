@@ -1,4 +1,3 @@
-# contact-management-app
 # Contact Management Application
 
 ## Tech Stack
