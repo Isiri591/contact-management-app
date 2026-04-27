@@ -27,6 +27,7 @@
     <table class="table table-striped table-hover">
         <tr>
             <th>Name</th>
+            <th>Address</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Actions</th>
@@ -35,6 +36,7 @@
         {% for contact in contacts %}
         <tr>
             <td>{{ contact.first_name }} {{ contact.last_name }}</td>
+            <td>{{ contact.address }}</td>
             <td>{{ contact.email }}</td>
             <td>{{ contact.phone_number }}</td>
             <td>
